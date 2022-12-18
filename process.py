@@ -19,7 +19,7 @@ def concat(x, y):
 def table_filling_process(array):
     table = create_table(len(array))
     for i in range(len(array)):
-        table[i][i] = grammar.check_production(list(array))
+        table[i][i] = grammar.check_production(list(array[i]))
     for i in range(1, len(array)):
         for j in range(i, len(array)):
             temp = []
