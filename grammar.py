@@ -52,27 +52,6 @@
 import general
 
 variable = ["K", "S", "P", "O", "Pel", "Ket", "NP", "VP", "AdjP", "PP", "NumP", "Verb", "Noun", "Adj", "Adv", "Num", "Prep", "PropNoun", "Pronoun"]
-# production = [
-#     ["SP", "KPel", "KO", "KKet"],
-#     general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NPAdj", "NPPropNoun", "NPPronoun", "NumPNP"],
-#     general.kata_kerja + ["AdvVP"] + general.kata_sifat + ["AdvAdjP"] + general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NPAdj", "NPPropNoun", "NPPronoun", "NumPNP"],
-#     general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NPAdj", "NPPropNoun", "NPPronoun", "NumPNP"],
-#     general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NP Adj", "NP PropNoun", "NP Pronoun", "NumP NP"] + general.kata_sifat + ["AdvAdjP"] + general.numeralia + ["NumPNum", "NumPNoun"] + general.kata_kerja + ["AdvVP"] + ["PrepNP"] + ["NPVP"],
-#     ["PrepNP"] + general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NPAdj", "NPPropNoun", "NPPronoun", "NumPNP"],
-#     general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NPAdj", "NPPropNoun", "NPPronoun", "NumPNP"],
-#     general.kata_kerja + ["AdvVP"],
-#     general.kata_sifat + ["AdvAdjP"],
-#     ["PrepNP"],
-#     general.numeralia + ["NumPNum", "NumPNoun"],
-#     general.kata_kerja,
-#     general.kata_benda,
-#     general.kata_sifat,
-#     general.kata_keterangan,
-#     general.numeralia,
-#     general.preposisi,
-#     general.proper_noun,
-#     general.kata_ganti
-# ]
 production = {
     "K" : ["SP", "KPel", "KO", "KKet"],
     "S" : general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NPAdj", "NPPropNoun", "NPPronoun", "NumPNP"],
