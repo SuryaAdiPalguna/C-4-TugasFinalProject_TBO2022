@@ -52,35 +52,56 @@
 import general
 
 variable = ["K", "S", "P", "O", "Pel", "Ket", "NP", "VP", "AdjP", "PP", "NumP", "Verb", "Noun", "Adj", "Adv", "Num", "Prep", "PropNoun", "Pronoun"]
-production = [
-    ["S P", "K Pel", "K O", "K Ket"],
-    general.kata_benda + general.proper_noun + general.kata_ganti + ["NP Noun", "NP Adj", "NP PropNoun", "NP Pronoun", "NumP NP"],
-    general.kata_kerja + ["Adv VP"] + general.kata_sifat + ["Adv AdjP"] + general.kata_benda + general.proper_noun + general.kata_ganti + ["NP Noun", "NP Adj", "NP PropNoun", "NP Pronoun", "NumP NP"],
-    general.kata_benda + general.proper_noun + general.kata_ganti + ["NP Noun", "NP Adj", "NP PropNoun", "NP Pronoun", "NumP NP"],
-    general.kata_benda + general.proper_noun + general.kata_ganti + ["NP Noun", "NP Adj", "NP PropNoun", "NP Pronoun", "NumP NP"] + general.kata_sifat + ["Adv AdjP"] + general.numeralia + ["NumP Num", "NumP Noun"] + general.kata_kerja + ["Adv VP"] + ["Prep NP"] + ["NP VP"],
-    ["Prep NP"] + general.kata_benda + general.proper_noun + general.kata_ganti + ["NP Noun", "NP Adj", "NP PropNoun", "NP Pronoun", "NumP NP"],
-    general.kata_benda + general.proper_noun + general.kata_ganti + ["NP Noun", "NP Adj", "NP PropNoun", "NP Pronoun", "NumP NP"],
-    general.kata_kerja + ["Adv VP"],
-    general.kata_sifat + ["Adv AdjP"],
-    ["Prep NP"],
-    general.numeralia + ["NumP Num", "NumP Noun"],
-    general.kata_kerja,
-    general.kata_benda,
-    general.kata_sifat,
-    general.kata_keterangan,
-    general.numeralia,
-    general.preposisi,
-    general.proper_noun,
-    general.kata_ganti
-]
+# production = [
+#     ["SP", "KPel", "KO", "KKet"],
+#     general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NPAdj", "NPPropNoun", "NPPronoun", "NumPNP"],
+#     general.kata_kerja + ["AdvVP"] + general.kata_sifat + ["AdvAdjP"] + general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NPAdj", "NPPropNoun", "NPPronoun", "NumPNP"],
+#     general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NPAdj", "NPPropNoun", "NPPronoun", "NumPNP"],
+#     general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NP Adj", "NP PropNoun", "NP Pronoun", "NumP NP"] + general.kata_sifat + ["AdvAdjP"] + general.numeralia + ["NumPNum", "NumPNoun"] + general.kata_kerja + ["AdvVP"] + ["PrepNP"] + ["NPVP"],
+#     ["PrepNP"] + general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NPAdj", "NPPropNoun", "NPPronoun", "NumPNP"],
+#     general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NPAdj", "NPPropNoun", "NPPronoun", "NumPNP"],
+#     general.kata_kerja + ["AdvVP"],
+#     general.kata_sifat + ["AdvAdjP"],
+#     ["PrepNP"],
+#     general.numeralia + ["NumPNum", "NumPNoun"],
+#     general.kata_kerja,
+#     general.kata_benda,
+#     general.kata_sifat,
+#     general.kata_keterangan,
+#     general.numeralia,
+#     general.preposisi,
+#     general.proper_noun,
+#     general.kata_ganti
+# ]
+production = {
+    "K" : ["SP", "KPel", "KO", "KKet"],
+    "S" : general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NPAdj", "NPPropNoun", "NPPronoun", "NumPNP"],
+    "P" : general.kata_kerja + ["AdvVP"] + general.kata_sifat + ["AdvAdjP"] + general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NPAdj", "NPPropNoun", "NPPronoun", "NumPNP"],
+    "O" : general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NPAdj", "NPPropNoun", "NPPronoun", "NumPNP"],
+    "Pel" : general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NP Adj", "NP PropNoun", "NP Pronoun", "NumP NP"] + general.kata_sifat + ["AdvAdjP"] + general.numeralia + ["NumPNum", "NumPNoun"] + general.kata_kerja + ["AdvVP"] + ["PrepNP"] + ["NPVP"],
+    "Ket" : ["PrepNP"] + general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NPAdj", "NPPropNoun", "NPPronoun", "NumPNP"],
+    "NP" : general.kata_benda + general.proper_noun + general.kata_ganti + ["NPNoun", "NPAdj", "NPPropNoun", "NPPronoun", "NumPNP"],
+    "VP" : general.kata_kerja + ["AdvVP"],
+    "AdjP" : general.kata_sifat + ["AdvAdjP"],
+    "PP" : ["PrepNP"],
+    "NumP" : general.numeralia + ["NumPNum", "NumPNoun"],
+    "Verb" : general.kata_kerja,
+    "Noun" : general.kata_benda,
+    "Adj" : general.kata_sifat,
+    "Adv" : general.kata_keterangan,
+    "Num" : general.numeralia,
+    "Prep" : general.preposisi,
+    "PropNoun" : general.proper_noun,
+    "Pronoun" : general.kata_ganti
+}
 start_symbol = ["K"]
 
 def check_production(array):
     sum = set()
     for i in array:
-        for n, value in enumerate(production):
-            if i in value:
-                sum.add(variable[n])
+        for j in variable:
+            if i in production[j]:
+                sum.add(j)
     return list(sum)
 
 def check_symbol(array):
