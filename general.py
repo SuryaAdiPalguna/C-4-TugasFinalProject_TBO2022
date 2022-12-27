@@ -1,32 +1,32 @@
-file = open("FinalProjectTBO/file_kata/verb.txt", "r")
+file = open("file_kata/verb.txt", "r")
 kata_kerja = file.read().split("\n")
 file.close()
 
-file = open("FinalProjectTBO/file_kata/noun.txt", "r")
+file = open("file_kata/noun.txt", "r")
 kata_benda = file.read().split("\n")
 file.close()
 
-file = open("FinalProjectTBO/file_kata/adj.txt", "r")
+file = open("file_kata/adj.txt", "r")
 kata_sifat = file.read().split("\n")
 file.close()
 
-file = open("FinalProjectTBO/file_kata/adv.txt", "r")
+file = open("file_kata/adv.txt", "r")
 kata_keterangan = file.read().split("\n")
 file.close()
 
-file = open("FinalProjectTBO/file_kata/num.txt", "r")
+file = open("file_kata/num.txt", "r")
 numeralia = file.read().split("\n")
 file.close()
 
-file = open("FinalProjectTBO/file_kata/prep.txt", "r")
+file = open("file_kata/prep.txt", "r")
 preposisi = file.read().split("\n")
 file.close()
 
-file = open("FinalProjectTBO/file_kata/prop_noun.txt", "r")
+file = open("file_kata/prop_noun.txt", "r")
 proper_noun = file.read().split("\n")
 file.close()
 
-file = open("FinalProjectTBO/file_kata/pronoun.txt", "r")
+file = open("file_kata/pronoun.txt", "r")
 kata_ganti = file.read().split("\n")
 file.close()
 
